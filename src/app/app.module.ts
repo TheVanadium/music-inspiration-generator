@@ -8,9 +8,9 @@ import { HeaderComponent } from './header/header.component';
 import { GenerateButtonComponent } from './generate-button/generate-button.component';
 import { SheetMusicComponent } from './sheet-music/sheet-music.component';
 import { TimeSignatureComponent } from './time-signature/time-signature.component';
-import { TempoMarkingComponent } from './tempo-marking/tempo-marking.component';
 import { MotifGeneratorComponent } from './motif-generator/motif-generator.component';
 import { KeySignatureComponent } from './key-signature/key-signature.component';
+import { MusicDescriptionComponent } from './music-description/music-description.component';
 
 @NgModule({
   declarations: [
@@ -20,9 +20,9 @@ import { KeySignatureComponent } from './key-signature/key-signature.component';
     GenerateButtonComponent,
     SheetMusicComponent,
     TimeSignatureComponent,
-    TempoMarkingComponent,
     MotifGeneratorComponent,
     KeySignatureComponent,
+    MusicDescriptionComponent,
   ],
   imports: [BrowserModule, AppRoutingModule],
   providers: [],
