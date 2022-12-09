@@ -1,0 +1,40 @@
+.header {
+    width: 100%;
+}
+
+.header *{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    list-style: none;
+    font-size : 1rem;
+}
+
+.header a{
+    text-decoration: none;
+    color: black;
+}
+
+/* underline .header a on hover */
+.header a:hover{
+    text-decoration: underline;
+}
+
+.header li{
+    margin: 0 10px;
+    padding: 1%;
+}
+
+/* first and second last items align right */
+.header li:nth-last-child(2){
+    margin-left: auto;
+}
+
+/* first item align left */
+.header li:first-child{
+    margin-right: auto;
+}
+
+.navbar {
+    padding: 0px;
+}
