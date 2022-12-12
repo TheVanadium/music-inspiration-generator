@@ -4,7 +4,6 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header.component';
-import { GenerateButtonComponent } from './generate-button/generate-button.component';
 import { SheetMusicComponent } from './sheet-music/sheet-music.component';
 import { MotifGeneratorComponent } from './motif-generator/motif-generator.component';
 import { MusicDescriptionComponent } from './music-description/music-description.component';
@@ -13,7 +12,6 @@ import { MusicDescriptionComponent } from './music-description/music-description
   declarations: [
     AppComponent,
     HeaderComponent,
-    GenerateButtonComponent,
     SheetMusicComponent,
     MotifGeneratorComponent,
     MusicDescriptionComponent,
