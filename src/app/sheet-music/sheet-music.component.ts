@@ -17,11 +17,13 @@ export class SheetMusicComponent {
     const div : HTMLElement = sheetMusic!; 
     const renderer = new Renderer(div, Renderer.Backends.SVG);
 
-    renderer.resize(500, 500);
+    renderer.resize(500, 200);
     const context = renderer.getContext();
 
     const stave = new Stave(10, 40, 400);
     stave.addClef("treble");
+    stave.addTimeSignature("4/4");
+    stave.addKeySignature("E");
     stave.setContext(context).draw();
 
     const notes = [

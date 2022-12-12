@@ -1,0 +1,16 @@
+app-music-description {
+    text-align: center;
+    font-weight: bold;
+    position: absolute;
+    margin-top: 40px;
+    margin-right: 140px;
+    left: 0;
+    right: 0;
+    z-index: 2;
+}
+app-sheet-music {
+    left: 0;
+    right: 0;
+    z-index: 1;
+    position: absolute;
+}
