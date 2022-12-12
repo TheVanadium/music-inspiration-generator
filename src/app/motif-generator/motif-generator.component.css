@@ -1,4 +1,18 @@
-app-music-description {
+app-sheet-music {
+    left: 0;
+    right: 0;
+    z-index: 1;
+    position: absolute;
+}
+
+#button-wrapper {
+    display: flex;
+    justify-content: center;
+    height: 100%;
+    width: 100%;
+}
+
+#music-description {
     text-align: center;
     font-weight: bold;
     position: absolute;
@@ -7,17 +21,4 @@ app-music-description {
     left: 0;
     right: 0;
     z-index: 2;
-}
-app-sheet-music {
-    left: 0;
-    right: 0;
-    z-index: 1;
-    position: absolute;
-}
-
-.button-wrapper {
-    display: flex;
-    justify-content: center;
-    height: 100%;
-    width: 100%;
 }
