@@ -1,8 +1,7 @@
 app-sheet-music {
     left: 0;
     right: 0;
-    z-index: 1;
-    position: absolute;
+    position: relative;
 }
 
 #button-wrapper {
@@ -13,12 +12,15 @@ app-sheet-music {
 }
 
 #music-description {
-    text-align: center;
+    text-align: left;
     font-weight: bold;
-    position: absolute;
-    margin-top: 40px;
-    margin-right: 140px;
-    left: 0;
+    position: relative;
     right: 0;
-    z-index: 2;
+    margin-top: 10px;
+}
+
+#music-description > p {
+    margin: 0 auto;
+    width: 50%;
+    text-align: center;
 }
