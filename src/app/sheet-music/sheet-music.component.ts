@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import * as Vex from 'vexflow';
 
 @Component({
@@ -8,13 +8,22 @@ import * as Vex from 'vexflow';
 })
 export class SheetMusicComponent {
 
+  @Input() keySignature = '';
+  @Input() timeSignature = '';
+
   constructor() {}
 
-  ngOnInit() {
+  render() {
     const { Formatter, Renderer, Stave, StaveNote, Voice } = Vex.Flow;
 
     const sheetMusic : HTMLElement = document.getElementById("sheet-music")!;
-    const div : HTMLElement = sheetMusic!; 
+    const div : HTMLElement = sheetMusic!;
+    
+    // prevents multiple renderings
+    while (div.firstChild) {
+      div.removeChild(div.firstChild);
+    }
+
     const renderer = new Renderer(div, Renderer.Backends.SVG);
 
     renderer.resize(500, 200);
@@ -22,8 +31,8 @@ export class SheetMusicComponent {
 
     const stave = new Stave(10, 40, 400);
     stave.addClef("treble");
-    stave.addTimeSignature("4/4");
-    stave.addKeySignature("E");
+    stave.addTimeSignature(this.timeSignature);
+    stave.addKeySignature(this.keySignature);
     stave.setContext(context).draw();
 
     const notes = [
@@ -38,5 +47,17 @@ export class SheetMusicComponent {
     new Formatter().joinVoices([voice]).format([voice], 350);
 
     voice.draw(context, stave);
+  }
+
+  generateMotif() {
+    this.render();
+  }
+
+  ngOnInit() {
+    this.render();
+  }
+
+  ngOnChanges() {
+    this.render();
   }
 }
