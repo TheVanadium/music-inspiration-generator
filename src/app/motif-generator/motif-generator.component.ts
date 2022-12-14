@@ -8,6 +8,9 @@ import * as Vex from 'vexflow';
   styleUrls: ['./motif-generator.component.css'],
 })
 export class MotifGeneratorComponent {
+
+  maxInterval = 9;
+
   keySignature = "";
   tempoIsFast : Boolean = true;
   timeSignature = "";
@@ -58,7 +61,7 @@ export class MotifGeneratorComponent {
 
     for (let i = 0; i < 3; i++) {
       noteIndex = this.scale.indexOf(tonic);
-      let interval = this.dieRoll(12);
+      let interval = this.dieRoll(this.maxInterval);
       let steps = interval-1;
       noteIndex += steps;
 
