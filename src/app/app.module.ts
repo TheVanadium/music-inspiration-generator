@@ -6,6 +6,7 @@ import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header.component';
 import { SheetMusicComponent } from './sheet-music/sheet-music.component';
 import { MotifGeneratorComponent } from './motif-generator/motif-generator.component';
+import { ReferenceBoxComponent } from './reference-box/reference-box.component';
 
 @NgModule({
   declarations: [
@@ -13,6 +14,7 @@ import { MotifGeneratorComponent } from './motif-generator/motif-generator.compo
     HeaderComponent,
     SheetMusicComponent,
     MotifGeneratorComponent,
+    ReferenceBoxComponent,
   ],
   imports: [BrowserModule, AppRoutingModule],
   providers: [],
