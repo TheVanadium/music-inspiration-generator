@@ -10,6 +10,7 @@ export class SheetMusicComponent {
 
   @Input() keySignature = '';
   @Input() timeSignature = '';
+  @Input() noteList : Array<string> = [];
 
   constructor() {}
 
@@ -26,22 +27,25 @@ export class SheetMusicComponent {
 
     const renderer = new Renderer(div, Renderer.Backends.SVG);
 
-    renderer.resize(500, 200);
+    renderer.resize(600, 200);
     const context = renderer.getContext();
 
-    const stave = new Stave(10, 40, 400);
+    const stave = new Stave(10, 40, 440);
     stave.addClef("treble");
     stave.addTimeSignature(this.timeSignature);
     stave.addKeySignature(this.keySignature);
     stave.setContext(context).draw();
 
     const notes = [
-      new StaveNote({ keys: ["c/4"], duration: "q" }),
-      new StaveNote({ keys: ["d/4"], duration: "q" }),
-      new StaveNote({ keys: ["b/4"], duration: "qr" }),
+      new StaveNote({ keys: [this.noteList[0]], duration: "q" }),
     ];
 
-    const voice = new Voice({ num_beats: 3, beat_value: 4 });
+    // for loop append notes to notes array
+    for (let i = 1; i < this.noteList.length; i++) {
+      notes.push(new StaveNote({ keys: [this.noteList[i]], duration: "q" }));
+    }
+
+    const voice = new Voice({ num_beats: 4, beat_value: 4 });
     voice.addTickables(notes);
 
     new Formatter().joinVoices([voice]).format([voice], 350);
