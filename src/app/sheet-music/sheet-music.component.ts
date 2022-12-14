@@ -20,6 +20,8 @@ export class SheetMusicComponent {
     const sheetMusic : HTMLElement = document.getElementById("sheet-music")!;
     const div : HTMLElement = sheetMusic!;
     
+    const beatsPerMeasure = parseInt(this.timeSignature[0]);
+
     // prevents multiple renderings
     while (div.firstChild) {
       div.removeChild(div.firstChild);
@@ -41,11 +43,11 @@ export class SheetMusicComponent {
     ];
 
     // for loop append notes to notes array
-    for (let i = 1; i < this.noteList.length; i++) {
+    for (let i = 1; i < beatsPerMeasure; i++) {
       notes.push(new StaveNote({ keys: [this.noteList[i]], duration: "q" }));
     }
 
-    const voice = new Voice({ num_beats: 4, beat_value: 4 });
+    const voice = new Voice({ num_beats: beatsPerMeasure, beat_value: 4 });
     voice.addTickables(notes);
 
     new Formatter().joinVoices([voice]).format([voice], 350);
