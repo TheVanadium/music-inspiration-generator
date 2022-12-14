@@ -4,4 +4,5 @@ div {
   width: 100%;
   text-align: center;
   align-items: center;
+  transform: translate(60px, 0);
 }
